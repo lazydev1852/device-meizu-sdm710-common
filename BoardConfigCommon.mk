@@ -11,7 +11,7 @@ COMMON_PATH := device/meizu/sdm710-common
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Build
-# BUILD_BROKEN_DUP_RULES := true
+ BUILD_BROKEN_DUP_RULES := true
 
 # Architecture
 TARGET_ARCH := arm64
