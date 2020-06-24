@@ -6,13 +6,15 @@
 
 $(call inherit-product, vendor/meizu/sdm710-common/sdm710-common-vendor.mk)
 
+
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-device
-PRODUCT_PACKAGE_OVERLAYS +=  $(LOCAL_PATH)/overlay-product
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay-device \
+    $(LOCAL_PATH)/overlay-sdm710 \
+    $(LOCAL_PATH)/overlay-lineage 
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-sdm710
-
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+# Product_Package_Overlay 
+ PRODUCT_PACKAGE_OVERLAYS +=  $(LOCAL_PATH)/overlay-product
 
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
@@ -247,8 +249,8 @@ PRODUCT_PACKAGES += \
     thermal.sdm710
 
 # Touch
-PRODUCT_PACKAGES += \
-    vendor.lineage.touch@1.0-service.meizu_sdm710
+# PRODUCT_PACKAGES += \
+#   vendor.lineage.touch@1.0-service.meizu_sdm710
 
 # USB
 PRODUCT_PACKAGES += \
